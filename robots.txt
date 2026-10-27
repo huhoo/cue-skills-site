@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://huhoo.github.io/cue-skills-site/sitemap.xml

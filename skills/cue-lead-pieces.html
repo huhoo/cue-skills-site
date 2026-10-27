@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><title>财报引文逐字核对 · Cue Skills</title>
+<meta name="description" content="用 Cue Omni Reader 解析公司披露，建带页码的信用线索件，逐句核对引文是否逐字出自所注页±1，对不上的标出或改回。"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="canonical" href="https://huhoo.github.io/cue-skills-site/skills/cue-lead-pieces.html"></head><body><main>
+<p><a href="../">← 全部 skill</a></p><h1>财报引文逐字核对</h1>
+<p><code>cue-lead-pieces</code> · v0.4.32 · MIT · 来源 <a href="https://github.com/huhoo/cue-awesome/tree/main/cue-lead-pieces">仓库子目录</a></p>
+<p>用 Cue Omni Reader 解析公司披露，建带页码的信用线索件，逐句核对引文是否逐字出自所注页±1，对不上的标出或改回。</p><h2>安装</h2><pre><code>npx skills add huhoo/cue-awesome --skill cue-lead-pieces</code></pre>
+<p>或：从 <a href="https://github.com/huhoo/cue-awesome/releases">Releases</a> 下载 <code>cue-lead-pieces.zip</code> 解到宿主 skills 目录（每枚同名资产在最新一发）。</p>
+<h2>完整说明</h2><p>Agent 思考，Cue 感知：用 Cue Omni Reader 把公司自己的披露（A股巨潮/美股SEC EDGAR）解析成带原PDF页码的原文，产出信用线索件，并逐句核对答案引文是否逐字出自所注页±1；--fix 改正页码、换回原句、删掉原文没有的。可选 Cue data-MCP 列公告、cue-research 补背景；未开通 Cue 本地解析兜底。实测（本地解析、单一模型与宿主、24家）：裸Agent引文39%对不上，本件流程95%逐字可查。不适合：投资与信贷建议。Triggers: credit signals, quote verification, 10-K, 年报、引文核对。</p>
+<p>本仓库的 skill 不判断真伪、不做预警；评级与目标价一律留人工。数据腿由 Cue 通道提供，配一把 API key 即可，无需自备数据源或自建数据层。</p>
+</main></body></html>

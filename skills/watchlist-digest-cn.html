@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><title>自选清单增量日报 · Cue Skills</title>
+<meta name="description" content="对你维护的自选清单跑每日增量：回购/股权激励/两融标的与折算率/公告/监管措施五腿，逐条带出处与 asof；无新增也明写，不评风险不预测。"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="canonical" href="https://huhoo.github.io/cue-skills-site/skills/watchlist-digest-cn.html"></head><body><main>
+<p><a href="../">← 全部 skill</a></p><h1>自选清单增量日报</h1>
+<p><code>watchlist-digest-cn</code> · v0.2.22 · MIT · 来源 <a href="https://github.com/huhoo/cue-awesome/tree/main/watchlist-digest-cn">仓库子目录</a></p>
+<p>对你维护的自选清单跑每日增量：回购/股权激励/两融标的与折算率/公告/监管措施五腿，逐条带出处与 asof；无新增也明写，不评风险不预测。</p><h2>安装</h2><pre><code>npx skills add huhoo/cue-awesome --skill watchlist-digest-cn</code></pre>
+<p>或：从 <a href="https://github.com/huhoo/cue-awesome/releases">Releases</a> 下载 <code>watchlist-digest-cn.zip</code> 解到宿主 skills 目录（每枚同名资产在最新一发）。</p>
+<h2>完整说明</h2><p>自选清单日报（状态文件驱动）：把公司名或 6 位代码落成 watchlist.json，每次运行从既有域取数与上次快照做差，产出「今日新增/近端变更/需人工」日报，每条挂官方出处＋asof；同日首跑按差集给增量、再跑复用当日记账（幂等只在当日内成立）。适合「我这几只票今天有什么新公告」「回购和激励推进到哪了」这类逐日重复需求。Do NOT use for: 行情、涨跌、资金流与北向（该域未开放，以 catalog 现值为准，本件不装）、风险评分或评级、一次性历史复盘。Triggers: 自选清单日报 / 我的票今天有什么新消息 / 盯公告 / watchlist daily digest</p>
+<p>本仓库的 skill 不判断真伪、不做预警；评级与目标价一律留人工。数据腿由 Cue 通道提供，配一把 API key 即可，无需自备数据源或自建数据层。</p>
+</main></body></html>
