@@ -1,11 +1,75 @@
-<!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><title>公告事件速读卡·关键数逐字带出处 · Cue Skills</title>
-<meta name="description" content="把一份A股临时公告变成五段可核对速读卡：逐字关键数带出处、影响链候选、同类对照、待核清单；评级目标价一律[待人工]。"><meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="canonical" href="https://huhoo.github.io/cue-skills-site/skills/event-brief-cn.html"></head><body><main>
-<p><a href="../">← 全部 skill</a></p><h1>公告事件速读卡·关键数逐字带出处</h1>
-<p><code>event-brief-cn</code> · v0.2.23 · MIT · 来源 <a href="https://github.com/huhoo/cue-awesome/tree/main/event-brief-cn">仓库子目录</a></p>
-<p>把一份A股临时公告变成五段可核对速读卡：逐字关键数带出处、影响链候选、同类对照、待核清单；评级目标价一律[待人工]。</p><h2>安装</h2><pre><code>npx skills add huhoo/cue-awesome --skill event-brief-cn</code></pre>
-<p>或：从 <a href="https://github.com/huhoo/cue-awesome/releases">Releases</a> 下载 <code>event-brief-cn.zip</code> 解到宿主 skills 目录（每枚同名资产在最新一发）。</p>
-<h2>完整说明</h2><p>A股公告事件速读卡：把一份临时公告（回购/增减持/业绩预告/重大合同/处罚问询等）变成可核对的五段卡——逐字关键数+出处、影响链候选、同类对照、待核清单。评级与目标价一律[待人工]，不预测走势。适合「刚出了公告先看什么」「这份公告讲什么」。Do NOT use for: 投资建议或买卖决策、未检索到的数据编造、收益承诺。Triggers: 公告速读 / 公告解读 / 这份公告 / 回购公告 / 增减持 / 业绩预告 / 处罚 / 问询函 / 刚出公告； announcement triage / A-share filing quick-read</p>
-<p>本仓库的 skill 不判断真伪、不做预警；评级与目标价一律留人工。数据腿由 Cue 通道提供，配一把 API key 即可，无需自备数据源或自建数据层。</p>
-</main></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>公告事件速读卡·关键数逐字带出处 · event-brief-cn</title>
+<meta name="description" content="把一份A股临时公告变成五段可核对速读卡：逐字关键数带出处、影响链候选、同类对照、待核清单；评级目标价一律[待人工]。">
+<link rel="canonical" href="https://huhoo.github.io/cue-skills-site/skills/event-brief-cn.html">
+<style>body{max-width:46rem;margin:2.5rem auto 4rem;padding:0 1.1rem;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif;color:#1c1c1c;background:#fff}h1{font-size:1.5rem;margin:.2rem 0 .1rem}h2{font-size:1.05rem;margin:2rem 0 .5rem;color:#333}.sub{color:#555;margin:0 0 1.4rem}.card{border:1px solid #e3e3e3;border-radius:8px;padding:.9rem 1rem;margin:.7rem 0}pre{background:#f6f6f6;border-radius:6px;padding:.75rem .85rem;overflow-x:auto;font-size:.86rem;line-height:1.5}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}a{color:#0b5cad}.note{color:#555;font-size:.9rem}.cap{color:#666;font-size:.82rem;margin:.3rem 0 0}.grid{display:grid;gap:.55rem}@media(max-width:640px){body{margin-top:1.4rem}}</style>
+</head>
+<body>
+<h1>公告事件速读卡·关键数逐字带出处</h1>
+<p class="sub"><code>event-brief-cn</code> · 场景 skill · 全部列表见 <a href="../">index</a></p>
+<h2>这枚做什么</h2>
+<div class="card">把一份A股临时公告变成五段可核对速读卡：逐字关键数带出处、影响链候选、同类对照、待核清单；评级目标价一律[待人工]。</div>
+<h2>能力与边界（原文完整描述）</h2>
+<div class="card">A股公告事件速读卡：把一份临时公告（回购/增减持/业绩预告/重大合同/处罚问询等）变成可核对的五段卡——逐字关键数+出处、影响链候选、同类对照、待核清单。评级与目标价一律[待人工]，不预测走势。适合「刚出了公告先看什么」「这份公告讲什么」。Do NOT use for: 投资建议或买卖决策、未检索到的数据编造、收益承诺。Triggers: 公告速读 / 公告解读 / 这份公告 / 回购公告 / 增减持 / 业绩预告 / 处罚 / 问询函 / 刚出公告； announcement triage / A-share filing quick-read</div>
+<h2>边界句</h2>
+<p class="note">评级与目标价一律[待人工]，不预测走势</p>
+<h2>安装</h2>
+<pre><code>npx skills add huhoo/cue-awesome --skill event-brief-cn</code></pre>
+<p class="cap">该行取自该枚包内面文（README.md）原句，非本页撰写；版本与变更以该枚 frontmatter 与该枚 CHANGELOG 现值为准。</p>
+<h2>示例输出</h2>
+<pre><code># 公告事件速读卡
+
+&gt; 用法：把一份临时公告填进这张五段卡，然后用 `https://github.com/huhoo/cue-awesome/blob/main/event-brief-cn/scripts/check_card.py &lt;本文件&gt;` 过一遍四道机检。
+&gt; **空模板过不了闸是设计，不是缺陷**——它要求每段有内容、每行关键数有出处锚、待核段有 `[待人工]` 挂账。
+&gt; 纪律来自 `SKILL.md` §2/§3/§5：披露以官方源为准；数字逐字，不四舍五入、不写「约」；未取到就写「未检索到」，不编。
+
+## 头部自标
+
+- 本卡状态：**AI 整理初稿，不构成投资建议**；关键数请回原文核对后再引用。
+- 披露日：____-__-__　数据日：____-__-__　来源（官方 URL 或文件名＋定位）：____________
+- 公告标题（照原文）：______________________
+- 来源级别：A 官方原文（巨潮／交易所／公司披露页）　B 官方件的一手转载（全文照转、可回指到官方件）　C 转手件（自媒体截图、群转发、二手摘录）
+- 自媒体截图／群转发一律标 C，**不得标 B**；标 C 时同段提示回原文核对。
+
+---
+
+## 一、事件类型判定
+
+**单选，取自本表；选「其他」必须附「按原文标题归类」的理由句。**
+
+| 类型 | 是否本卡 |
+|---|---|
+| 回购 | ☐ |
+| 增持减持 | ☐ |
+| 业绩预告 | ☐ |
+| 重大合同中标 | ☐ |
+| 分红送转 | ☐ |
+| 停复牌 | ☐ |
+| 处罚问询 | ☐ |
+| 股权变动 | ☐ |
+| 资产减值 | ☐ |
+| 其他（附原文标题归类句） | ☐ |
+
+判定句（照原文标题写，不加工）：______________________
+
+## 二、关键数快表
+
+&gt; 逐字摘录：金额、比例、日期、期限、主体名一个都不改写。每行必须有出处锚（页码或段落定位；解析通道返回何种锚形制以实际为准）。
+
+| # | 关键数（逐字，含单位） | 出处锚（页／段／行） |
+|---|---|---|
+| 1 | | |
+| 2 | | |
+| 3 | | |
+
+## 三、影响链候选
+</code></pre>
+<p class="cap">逐字节取自该枚包内随包样例件 <code>assets/公告速读卡.md</code>。页面里的包内路径已改写成 GitHub 可跟随链接，词面未改。</p>
+<h2>出处</h2>
+<p class="note">源码与完整说明：<a href="https://github.com/huhoo/cue-awesome/tree/main/event-brief-cn">huhoo/cue-awesome/event-brief-cn</a>；许可与来源说明见主仓 LICENSE 与 NOTICE。</p>
+</body>
+</html>

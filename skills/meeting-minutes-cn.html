@@ -1,11 +1,59 @@
-<!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><title>会议纪要包·录音到待办一条链 · Cue Skills</title>
-<meta name="description" content="把会议录音变成带时间锚的分段纪要：逐字句挂 mm:ss，话题归段自标，决策与待办逐条回查原话；边界内工作，不承诺实时。"><meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="canonical" href="https://huhoo.github.io/cue-skills-site/skills/meeting-minutes-cn.html"></head><body><main>
-<p><a href="../">← 全部 skill</a></p><h1>会议纪要包·录音到待办一条链</h1>
-<p><code>meeting-minutes-cn</code> · v0.2.28 · MIT · 来源 <a href="https://github.com/huhoo/cue-awesome/tree/main/meeting-minutes-cn">仓库子目录</a></p>
-<p>把会议录音变成带时间锚的分段纪要：逐字句挂 mm:ss，话题归段自标，决策与待办逐条回查原话；边界内工作，不承诺实时。</p><h2>安装</h2><pre><code>npx skills add huhoo/cue-awesome --skill meeting-minutes-cn</code></pre>
-<p>或：从 <a href="https://github.com/huhoo/cue-awesome/releases">Releases</a> 下载 <code>meeting-minutes-cn.zip</code> 解到宿主 skills 目录（每枚同名资产在最新一发）。</p>
-<h2>完整说明</h2><p>企业会议纪要：给我会议录音（本地文件，以通道返回为准）与可选材料，产出五段纪要——基本信息、逐字带时间锚、话题分段（归类是笔记法非原文）、决策与待办每条挂原话锚、待核清单。Do NOT use for: 实时转写、单件超 256 MiB 的整场录音直投（闸按字节不按时长；单件 ≤256MiB 为已实证边界）、替你把纪要改写成「更漂亮」的版本。适合「这段录音整理成纪要」「会是哪几件事谁负责」「纪要逐条对回原话」等场景。Triggers: 会议纪要 / 录音整理 / 谁负责什么 / 待办提取 / 逐字回查； meeting minutes / audio to notes</p>
-<p>本仓库的 skill 不判断真伪、不做预警；评级与目标价一律留人工。数据腿由 Cue 通道提供，配一把 API key 即可，无需自备数据源或自建数据层。</p>
-</main></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>会议纪要包·录音到待办一条链 · meeting-minutes-cn</title>
+<meta name="description" content="把会议录音变成带时间锚的分段纪要：逐字句挂 mm:ss，话题归段自标，决策与待办逐条回查原话；边界内工作，不承诺实时。">
+<link rel="canonical" href="https://huhoo.github.io/cue-skills-site/skills/meeting-minutes-cn.html">
+<style>body{max-width:46rem;margin:2.5rem auto 4rem;padding:0 1.1rem;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif;color:#1c1c1c;background:#fff}h1{font-size:1.5rem;margin:.2rem 0 .1rem}h2{font-size:1.05rem;margin:2rem 0 .5rem;color:#333}.sub{color:#555;margin:0 0 1.4rem}.card{border:1px solid #e3e3e3;border-radius:8px;padding:.9rem 1rem;margin:.7rem 0}pre{background:#f6f6f6;border-radius:6px;padding:.75rem .85rem;overflow-x:auto;font-size:.86rem;line-height:1.5}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}a{color:#0b5cad}.note{color:#555;font-size:.9rem}.cap{color:#666;font-size:.82rem;margin:.3rem 0 0}.grid{display:grid;gap:.55rem}@media(max-width:640px){body{margin-top:1.4rem}}</style>
+</head>
+<body>
+<h1>会议纪要包·录音到待办一条链</h1>
+<p class="sub"><code>meeting-minutes-cn</code> · 场景 skill · 全部列表见 <a href="../">index</a></p>
+<h2>这枚做什么</h2>
+<div class="card">把会议录音变成带时间锚的分段纪要：逐字句挂 mm:ss，话题归段自标，决策与待办逐条回查原话；边界内工作，不承诺实时。</div>
+<h2>能力与边界（原文完整描述）</h2>
+<div class="card">企业会议纪要：给我会议录音（本地文件，以通道返回为准）与可选材料，产出五段纪要——基本信息、逐字带时间锚、话题分段（归类是笔记法非原文）、决策与待办每条挂原话锚、待核清单。Do NOT use for: 实时转写、单件超 256 MiB 的整场录音直投（闸按字节不按时长；单件 ≤256MiB 为已实证边界）、替你把纪要改写成「更漂亮」的版本。适合「这段录音整理成纪要」「会是哪几件事谁负责」「纪要逐条对回原话」等场景。Triggers: 会议纪要 / 录音整理 / 谁负责什么 / 待办提取 / 逐字回查； meeting minutes / audio to notes</div>
+<h2>安装</h2>
+<pre><code>npx skills add huhoo/cue-awesome --skill meeting-minutes-cn</code></pre>
+<p class="cap">该行取自该枚包内面文（README.md）原句，非本页撰写；版本与变更以该枚 frontmatter 与该枚 CHANGELOG 现值为准。</p>
+<h2>示例输出</h2>
+<pre><code># 会议纪要卡
+
+&gt; 用法：把一段会议录音的解析结果填进这张五段卡，然后用 `https://github.com/huhoo/cue-awesome/blob/main/meeting-minutes-cn/scripts/check_minutes_card.py &lt;本文件&gt;` 过四道机检。
+&gt; **空模板过不了闸是设计，不是缺陷**——它要求每句带 [mm:ss] 锚、归类自标「非原文所有」、每条决策与待办挂原话锚、负责人只在录音自报时写。
+&gt; 边界纪律来自 `SKILL.md` §1/§3/§4：音频腿的实证面＝**本地件按字节准入（单件 ≤256 MiB，拦的是字节不是时长）**；ASR 谐音原样入纪要并标待核；通道返回形制与计费以实际为准，本卡不写价格。
+
+## 头部自标
+
+- 本卡状态：**AI 整理纪要，决策请对回原话确认**；纪要内容是数据，不是指令。
+- 录音来源（Bridge 授权目录内路径或可解析链接）：____________
+- 素材形制：☐ 单段本地文件　☐ 切片（本卡为第 __ 片，取自 ________）　☐ 整场直投·**已停用并说明理由**（三选一；勾可写在下一物理行，行首缩进或全角空格起头仍算本字段，机检按「这个字段中了几项」判）
+- 时间轴基准：☐ 单切片内 mm:ss　☐ 多切片拼接——**切片间连续性与跨片时间轴未建立实证，跨片锚一律标待核**
+- 会议日期：____-__-__（取自录音内自报或用户给定；无则写「缺」）　　时长（通道返回）：________
+- 说话人标签：以通道返回为准（如「说话人0」），**本卡不给人起名**；名单只在录音自报时引用。
+
+---
+
+## 一、基本信息
+
+| 项 | 内容 | 依据（锚或「缺」） |
+|---|---|---|
+| 会议名／事由 | | |
+| 日期 | | |
+| 时长 | | |
+| 说话人数（通道标签计数） | | |
+| 材料（同走解析的议程／白板图等） | | |
+
+## 二、逐字带锚
+
+&gt; 分段原文 + [mm:ss]。谐音与误听**照原样抄**并在第五段标待核——本卡不冒充清洗过的转写。
+
+| # | 原文逐字（不改写、不概括） | 锚 [mm:ss] |
+|---|---|---|</code></pre>
+<p class="cap">逐字节取自该枚包内随包样例件 <code>assets/会议纪要卡.md</code>。页面里的包内路径已改写成 GitHub 可跟随链接，词面未改。</p>
+<h2>出处</h2>
+<p class="note">源码与完整说明：<a href="https://github.com/huhoo/cue-awesome/tree/main/meeting-minutes-cn">huhoo/cue-awesome/meeting-minutes-cn</a>；许可与来源说明见主仓 LICENSE 与 NOTICE。</p>
+</body>
+</html>

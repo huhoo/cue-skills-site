@@ -1,11 +1,57 @@
-<!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><title>一条链接→一条带出处的笔记 · Cue Skills</title>
-<meta name="description" content="一条链接进来、一条带出处的笔记出去：要点逐条挂 [S#]，原话逐字比回那一页那一行，缺口点名，判断留人工。"><meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="canonical" href="https://huhoo.github.io/cue-skills-site/skills/cn-link-to-note.html"></head><body><main>
-<p><a href="../">← 全部 skill</a></p><h1>一条链接→一条带出处的笔记</h1>
-<p><code>cn-link-to-note</code> · v0.1.2 · MIT · 来源 <a href="https://github.com/huhoo/cue-awesome/tree/main/cn-link-to-note">仓库子目录</a></p>
-<p>一条链接进来、一条带出处的笔记出去：要点逐条挂 [S#]，原话逐字比回那一页那一行，缺口点名，判断留人工。</p><h2>安装</h2><pre><code>npx skills add huhoo/cue-awesome --skill cn-link-to-note</code></pre>
-<p>或：从 <a href="https://github.com/huhoo/cue-awesome/releases">Releases</a> 下载 <code>cn-link-to-note.zip</code> 解到宿主 skills 目录（每枚同名资产在最新一发）。</p>
-<h2>完整说明</h2><p>链接→笔记起草：输入是一枚 URL（正文走解析通道取回本地那一份）或一份本地文件，产出是一条可直接进笔记库的 Markdown 笔记——标题、要点 3–7 条（每条一个 [S#] 锚）、至多一枚原话引用（逐字，带页码或行号）、口径与未取到、来源行（带 文件:行号 或 URL 与检索日）。机检 check_note.py 四道：形制／锚与定位／引用是否逐字回原文／缺口是否点名，零网络。适合读完一篇先落一条能回查的笔记。Do NOT use for: 整篇换格式、多源互校速览、建跨期知识包、替你决定信不信（判断位 [待人工]）。Triggers: 链接转笔记 / 一条笔记 / 带出处笔记</p>
-<p>本仓库的 skill 不判断真伪、不做预警；评级与目标价一律留人工。数据腿由 Cue 通道提供，配一把 API key 即可，无需自备数据源或自建数据层。</p>
-</main></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>一条链接→一条带出处的笔记 · cn-link-to-note</title>
+<meta name="description" content="一条链接进来、一条带出处的笔记出去：要点逐条挂 [S#]，原话逐字比回那一页那一行，缺口点名，判断留人工。">
+<link rel="canonical" href="https://huhoo.github.io/cue-skills-site/skills/cn-link-to-note.html">
+<style>body{max-width:46rem;margin:2.5rem auto 4rem;padding:0 1.1rem;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif;color:#1c1c1c;background:#fff}h1{font-size:1.5rem;margin:.2rem 0 .1rem}h2{font-size:1.05rem;margin:2rem 0 .5rem;color:#333}.sub{color:#555;margin:0 0 1.4rem}.card{border:1px solid #e3e3e3;border-radius:8px;padding:.9rem 1rem;margin:.7rem 0}pre{background:#f6f6f6;border-radius:6px;padding:.75rem .85rem;overflow-x:auto;font-size:.86rem;line-height:1.5}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}a{color:#0b5cad}.note{color:#555;font-size:.9rem}.cap{color:#666;font-size:.82rem;margin:.3rem 0 0}.grid{display:grid;gap:.55rem}@media(max-width:640px){body{margin-top:1.4rem}}</style>
+</head>
+<body>
+<h1>一条链接→一条带出处的笔记</h1>
+<p class="sub"><code>cn-link-to-note</code> · 场景 skill · 全部列表见 <a href="../">index</a></p>
+<h2>这枚做什么</h2>
+<div class="card">一条链接进来、一条带出处的笔记出去：要点逐条挂 [S#]，原话逐字比回那一页那一行，缺口点名，判断留人工。</div>
+<h2>能力与边界（原文完整描述）</h2>
+<div class="card">链接→笔记起草：输入是一枚 URL（正文走解析通道取回本地那一份）或一份本地文件，产出是一条可直接进笔记库的 Markdown 笔记——标题、要点 3–7 条（每条一个 [S#] 锚）、至多一枚原话引用（逐字，带页码或行号）、口径与未取到、来源行（带 文件:行号 或 URL 与检索日）。机检 check_note.py 四道：形制／锚与定位／引用是否逐字回原文／缺口是否点名，零网络。适合读完一篇先落一条能回查的笔记。Do NOT use for: 整篇换格式、多源互校速览、建跨期知识包、替你决定信不信（判断位 [待人工]）。Triggers: 链接转笔记 / 一条笔记 / 带出处笔记</div>
+<h2>边界句</h2>
+<p class="note">Do NOT use for: 整篇换格式、多源互校速览、建跨期知识包、替你决定信不信（判断位 [待人工]）</p>
+<h2>安装</h2>
+<pre><code>npx skills add huhoo/cue-awesome --skill cn-link-to-note</code></pre>
+<p class="cap">该行取自该枚包内面文（README.md）原句，非本页撰写；版本与变更以该枚 frontmatter 与该枚 CHANGELOG 现值为准。</p>
+<h2>示例输出</h2>
+<pre><code># 样本量不到三十时，比例别写成趋势（一条笔记）
+
+本页由 AI 整理，是 **AI 整理笔记**：每条要点都请回原文核对，它不构成结论或建议，判断位 [待人工]。
+链接：https://example.org/sample-note ｜检索日 2026-10-22｜读取方式：解析通道把正文取回成本地那一份后只读它
+这条笔记的形状：要点各一行、行末挂 [S#]；原话只留一句、带页码；缺的那部分写在第三节点名。
+
+## 1、要点
+
+- 结论位：一项调研的样本量不到三十时，其比例不宜对外表述为趋势——这是作者在第一段自己下的那句 [S1]
+- 方法：访谈分三轮、每轮换人，同一轮的答复不被当作复证 [S1]
+- 限制：文中的百分比全部来自有偏样本，作者明写不能外推到全行业 [S1]
+- 附录一有问卷原题十一道，其中三道是开放题 [S2]
+- 访谈提纲与实问之间存在偏差，而那份材料没给偏差率的数 [S2]
+
+## 2、原话引用
+
+&gt; 「一项调研的样本量如果不到三十，其比例不宜对外表述为趋势。」（出处：〔第 1 页〕，https://github.com/huhoo/cue-awesome/blob/main/cn-link-to-note/scripts/fixtures/source-article.md:5）
+
+## 3、口径与未取到
+
+- 口径：五条要点全部出自同一份正文，本件不做跨源互校——单源笔记不做互校是设计，不是遗漏
+- 未取到：作者署名与发布日期在取回的那份正文里没有（页眉页脚都无），本笔记不代填
+- 口径：检索日 2026-10-22；链接那一侧隔天就可能换形制，页码与行号只在那一刻成立
+- 判断位：这条笔记要不要进你的库、信不信这句结论，一律 [待人工]
+
+## 4、来源
+
+- [S1] 示例文章正文（https://example.org/sample-note ｜检索日 2026-10-22）
+- [S2] 同一篇的解析件本地那一份（https://github.com/huhoo/cue-awesome/blob/main/cn-link-to-note/scripts/fixtures/source-article.md:1 ｜检索日 2026-10-22）</code></pre>
+<p class="cap">取自该枚包内样例件 <code>scripts/fixtures/good-note.md</code>——机检守护样例，不是用户产物、也不是某次运行结果。</p>
+<h2>出处</h2>
+<p class="note">源码与完整说明：<a href="https://github.com/huhoo/cue-awesome/tree/main/cn-link-to-note">huhoo/cue-awesome/cn-link-to-note</a>；许可与来源说明见主仓 LICENSE 与 NOTICE。</p>
+</body>
+</html>

@@ -1,11 +1,49 @@
-<!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><title>中文多源研究速览·逐条挂源 · Cue Skills</title>
-<meta name="description" content="把多份中文来源整理成一份逐条挂源的速览：每条发现带一条可回查来源与检索日，缺的点名，判断留人工。"><meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="canonical" href="https://huhoo.github.io/cue-skills-site/skills/cn-research-brief.html"></head><body><main>
-<p><a href="../">← 全部 skill</a></p><h1>中文多源研究速览·逐条挂源</h1>
-<p><code>cn-research-brief</code> · v0.1.1 · MIT · 来源 <a href="https://github.com/huhoo/cue-awesome/tree/main/cn-research-brief">仓库子目录</a></p>
-<p>把多份中文来源整理成一份逐条挂源的速览：每条发现带一条可回查来源与检索日，缺的点名，判断留人工。</p><h2>安装</h2><pre><code>npx skills add huhoo/cue-awesome --skill cn-research-brief</code></pre>
-<p>或：从 <a href="https://github.com/huhoo/cue-awesome/releases">Releases</a> 下载 <code>cn-research-brief.zip</code> 解到宿主 skills 目录（每枚同名资产在最新一发）。</p>
-<h2>完整说明</h2><p>多源研究速览起草：输入是一批中文来源（网页／公告／报道／解析件）或一个待查问题，产出是四节速览——一句话结论、逐条发现（每条一个 [S#] 锚）、未取到与口径、来源（逐条带 URL 与检索日）。机检 check_brief.py 四道：形制／锚／判断词／未取到点名，零网络。适合投前初筛、行业快讯、竞品多点对照、政策多源核对。Do NOT use for: 评级、目标价、买卖与时机建议（一律 [待人工]）、单一来源的转述（那只是摘要）、逐数核口径的财报深度点评（走姊妹件那一路）、最终决议（本件只起草，用户负终审）。Triggers: 多源速览 / 研究速览 / 中文源核对 / 带出处的要点清单</p>
-<p>本仓库的 skill 不判断真伪、不做预警；评级与目标价一律留人工。数据腿由 Cue 通道提供，配一把 API key 即可，无需自备数据源或自建数据层。</p>
-</main></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>中文多源研究速览·逐条挂源 · cn-research-brief</title>
+<meta name="description" content="把多份中文来源整理成一份逐条挂源的速览：每条发现带一条可回查来源与检索日，缺的点名，判断留人工。">
+<link rel="canonical" href="https://huhoo.github.io/cue-skills-site/skills/cn-research-brief.html">
+<style>body{max-width:46rem;margin:2.5rem auto 4rem;padding:0 1.1rem;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif;color:#1c1c1c;background:#fff}h1{font-size:1.5rem;margin:.2rem 0 .1rem}h2{font-size:1.05rem;margin:2rem 0 .5rem;color:#333}.sub{color:#555;margin:0 0 1.4rem}.card{border:1px solid #e3e3e3;border-radius:8px;padding:.9rem 1rem;margin:.7rem 0}pre{background:#f6f6f6;border-radius:6px;padding:.75rem .85rem;overflow-x:auto;font-size:.86rem;line-height:1.5}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}a{color:#0b5cad}.note{color:#555;font-size:.9rem}.cap{color:#666;font-size:.82rem;margin:.3rem 0 0}.grid{display:grid;gap:.55rem}@media(max-width:640px){body{margin-top:1.4rem}}</style>
+</head>
+<body>
+<h1>中文多源研究速览·逐条挂源</h1>
+<p class="sub"><code>cn-research-brief</code> · 场景 skill · 全部列表见 <a href="../">index</a></p>
+<h2>这枚做什么</h2>
+<div class="card">把多份中文来源整理成一份逐条挂源的速览：每条发现带一条可回查来源与检索日，缺的点名，判断留人工。</div>
+<h2>能力与边界（原文完整描述）</h2>
+<div class="card">多源研究速览起草：输入是一批中文来源（网页／公告／报道／解析件）或一个待查问题，产出是四节速览——一句话结论、逐条发现（每条一个 [S#] 锚）、未取到与口径、来源（逐条带 URL 与检索日）。机检 check_brief.py 四道：形制／锚／判断词／未取到点名，零网络。适合投前初筛、行业快讯、竞品多点对照、政策多源核对。Do NOT use for: 评级、目标价、买卖与时机建议（一律 [待人工]）、单一来源的转述（那只是摘要）、逐数核口径的财报深度点评（走姊妹件那一路）、最终决议（本件只起草，用户负终审）。Triggers: 多源速览 / 研究速览 / 中文源核对 / 带出处的要点清单</div>
+<h2>安装</h2>
+<pre><code>npx skills add huhoo/cue-awesome --skill cn-research-brief</code></pre>
+<p class="cap">该行取自该枚包内面文（README.md）原句，非本页撰写；版本与变更以该枚 frontmatter 与该枚 CHANGELOG 现值为准。</p>
+<h2>示例输出</h2>
+<pre><code># 多源研究速览（合成样例）
+
+本页由 AI 整理，是 **AI 整理初稿**：逐条请回原文核对，不构成投资建议，判断位 [待人工]。
+主体：合成示例「海芯科技」（代码 HX0001，虚构主体，仅用于演示形制）｜检索窗口：近 90 日
+
+## 1、一句话结论
+公开来源能对上的是两件事：一条产能扩张的自述与一条客户结构的自述；两者都只有单方来源，口径未互校。
+
+## 2、逐条发现
+- 公司自述 2026 年 Q2 产线由每月 1.2 万台扩至 1.8 万台，扩产口径为「设计产能」 [S1]
+- 公司自述前五大客户收入占比 58%，未披露单一客户占比上限 [S1]
+- 行业媒体转引称其主要客户为一家长城系整机厂，未见公司侧确认 [S2]
+- 2025 年报口径的毛利率与本次渠道检索到的季度口径毛利率未互校，未取到同口径对照数 [S3]
+
+## 3、未取到与口径
+- 未取到：同口径毛利率对照数（渠道只给到季度口径，年报为年度口径）；分客户账期未披露
+- 口径：产能数字为公司自述的设计产能，非实际产量；客户占比为公司自述口径，未经审计确认
+- 待人工：以上两条是否足以支撑任何判断，本件不给结论（判断位 [待人工]）
+
+## 4、来源
+- [S1] 合成示例公司官网新闻稿《产线扩建完成》（https://example.org/hx0001/press-release ｜检索日 2026-10-20）
+- [S2] 合成示例行业媒体报道《供应链调查》（https://example.org/industry/hx0001-supply-chain ｜检索日 2026-10-20）
+- [S3] 合成示例交易所互动平台问答记录（https://example.org/exchange/hx0001-qa ｜检索日 2026-10-21）</code></pre>
+<p class="cap">取自该枚包内样例件 <code>scripts/fixtures/good-brief.md</code>——机检守护样例，不是用户产物、也不是某次运行结果。</p>
+<h2>出处</h2>
+<p class="note">源码与完整说明：<a href="https://github.com/huhoo/cue-awesome/tree/main/cn-research-brief">huhoo/cue-awesome/cn-research-brief</a>；许可与来源说明见主仓 LICENSE 与 NOTICE。</p>
+</body>
+</html>

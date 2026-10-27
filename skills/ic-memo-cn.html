@@ -1,11 +1,63 @@
-<!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><title>投决备忘录起草·逐条挂源 · Cue Skills</title>
-<meta name="description" content="给一家公司起草投决备忘录：七个结构节，每条数字带官方出处与定位，缺数点名不填空；bull 与 bear 并陈，不评级不表决。"><meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="canonical" href="https://huhoo.github.io/cue-skills-site/skills/ic-memo-cn.html"></head><body><main>
-<p><a href="../">← 全部 skill</a></p><h1>投决备忘录起草·逐条挂源</h1>
-<p><code>ic-memo-cn</code> · v0.3.3 · MIT · 来源 <a href="https://github.com/huhoo/cue-awesome/tree/main/ic-memo-cn">仓库子目录</a></p>
-<p>给一家公司起草投决备忘录：七个结构节，每条数字带官方出处与定位，缺数点名不填空；bull 与 bear 并陈，不评级不表决。</p><h2>安装</h2><pre><code>npx skills add huhoo/cue-awesome --skill ic-memo-cn</code></pre>
-<p>或：从 <a href="https://github.com/huhoo/cue-awesome/releases">Releases</a> 下载 <code>ic-memo-cn.zip</code> 解到宿主 skills 目录（每枚同名资产在最新一发）。</p>
-<h2>完整说明</h2><p>投决备忘录草稿生成：输入是一家公司名／六位代码或你手上的材料，产出七节备忘录——摘要、事实与数字、业务要点、风险与反方、缺数与未决、人工复核、来源索引；每个数字带披露或监管源＋字符/页定位，取不到的行直接写「未取到」，正反两方各至少一条否则机检拦下。适合投前材料整理、内部讨论稿、需要「每条数都能回原文核」的场合。Do NOT use for: 评级、目标价、买卖建议（一律 `[待人工]`）、最终决议（本件只起草，用户负终审）、估值测算（无行情与持仓数据腿，只做适用性声明）、整体风险打分。Triggers: 投决备忘录 / IC 备忘录 / 投前材料 / 讨论稿逐条可回查</p>
-<p>本仓库的 skill 不判断真伪、不做预警；评级与目标价一律留人工。数据腿由 Cue 通道提供，配一把 API key 即可，无需自备数据源或自建数据层。</p>
-</main></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>投决备忘录起草·逐条挂源 · ic-memo-cn</title>
+<meta name="description" content="给一家公司起草投决备忘录：七个结构节，每条数字带官方出处与定位，缺数点名不填空；bull 与 bear 并陈，不评级不表决。">
+<link rel="canonical" href="https://huhoo.github.io/cue-skills-site/skills/ic-memo-cn.html">
+<style>body{max-width:46rem;margin:2.5rem auto 4rem;padding:0 1.1rem;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif;color:#1c1c1c;background:#fff}h1{font-size:1.5rem;margin:.2rem 0 .1rem}h2{font-size:1.05rem;margin:2rem 0 .5rem;color:#333}.sub{color:#555;margin:0 0 1.4rem}.card{border:1px solid #e3e3e3;border-radius:8px;padding:.9rem 1rem;margin:.7rem 0}pre{background:#f6f6f6;border-radius:6px;padding:.75rem .85rem;overflow-x:auto;font-size:.86rem;line-height:1.5}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}a{color:#0b5cad}.note{color:#555;font-size:.9rem}.cap{color:#666;font-size:.82rem;margin:.3rem 0 0}.grid{display:grid;gap:.55rem}@media(max-width:640px){body{margin-top:1.4rem}}</style>
+</head>
+<body>
+<h1>投决备忘录起草·逐条挂源</h1>
+<p class="sub"><code>ic-memo-cn</code> · 场景 skill · 全部列表见 <a href="../">index</a></p>
+<h2>这枚做什么</h2>
+<div class="card">给一家公司起草投决备忘录：七个结构节，每条数字带官方出处与定位，缺数点名不填空；bull 与 bear 并陈，不评级不表决。</div>
+<h2>能力与边界（原文完整描述）</h2>
+<div class="card">投决备忘录草稿生成：输入是一家公司名／六位代码或你手上的材料，产出七节备忘录——摘要、事实与数字、业务要点、风险与反方、缺数与未决、人工复核、来源索引；每个数字带披露或监管源＋字符/页定位，取不到的行直接写「未取到」，正反两方各至少一条否则机检拦下。适合投前材料整理、内部讨论稿、需要「每条数都能回原文核」的场合。Do NOT use for: 评级、目标价、买卖建议（一律 `[待人工]`）、最终决议（本件只起草，用户负终审）、估值测算（无行情与持仓数据腿，只做适用性声明）、整体风险打分。Triggers: 投决备忘录 / IC 备忘录 / 投前材料 / 讨论稿逐条可回查</div>
+<h2>安装</h2>
+<pre><code>npx skills add huhoo/cue-awesome --skill ic-memo-cn</code></pre>
+<p class="cap">该行取自该枚包内面文（README.md）原句，非本页撰写；版本与变更以该枚 frontmatter 与该枚 CHANGELOG 现值为准。</p>
+<h2>示例输出</h2>
+<pre><code># 投决备忘录（草稿）·模板
+
+&gt; 用法：这份草稿由 `https://github.com/huhoo/cue-awesome/blob/main/ic-memo-cn/scripts/build_memo.py` 产出、再由 `https://github.com/huhoo/cue-awesome/blob/main/ic-memo-cn/scripts/check_memo.py &lt;本文件&gt; --run run.json` 过四道机检。
+&gt; **空模板过不了闸是设计，不是缺陷**——它要求四件自标与三句边界原样在位、七节齐且有序、每个数值行挂出处锚与定位、
+&gt; 六类计数与本次 run.json 对得上、合计只由同口径分项相加、判断词全部关在第六节。
+&gt; 纪律来自 `SKILL.md` §3/§4/§5：取不到的行落第五节点名，不填不猜；看多与看空各至少一条，缺一侧就不成文。
+
+## 头部自标
+
+- 本件状态：**____**（须含「AI 整理初稿」「请回官方原文核对」「不构成投资建议」「不构成决议」四件）
+- 交付形制：七节（摘要／事实与数字／业务与行业要点／风险与反方／缺数与未决／人工复核清单／来源索引）；机检跑 `check_memo.py` 并带 `--run run.json`。
+- 能力边界：____（须含「不决议只起草」「不评级、不给目标价」「不含估值测算」「适用性声明」）
+
+---
+
+## 一、摘要
+
+本稿主体为 ____（____），快照时点 ____。
+本次落成：事实与数字 ____ 条、业务要点 ____ 条、看多 ____ 条、看空 ____ 条；缺数与未决 ____ 条逐条列于第五节。
+以上条数取自本次运行账 run.json，未取到的行不填、不猜、不以外部搜索顶替。
+
+## 二、事实与数字
+
+| # | 组 | 事实／指标 | 数值 | 单位 | 口径 | 日期 | 出处锚 | 定位 |
+|---|---|---|---|---|---|---|---|---|
+| 1 | | | | | | | | |
+
+同一事实多源时并列两源，不合并不取平均（上表每行只载一源）。
+
+## 三、业务与行业要点
+
+| # | 要点（照可指到的陈述） | 出处锚 | 定位 |
+|---|---|---|---|
+| 1 | | | |
+
+## 四、风险与反方
+</code></pre>
+<p class="cap">逐字节取自该枚包内随包样例件 <code>assets/投决备忘录.md</code>。页面里的包内路径已改写成 GitHub 可跟随链接，词面未改。</p>
+<h2>出处</h2>
+<p class="note">源码与完整说明：<a href="https://github.com/huhoo/cue-awesome/tree/main/ic-memo-cn">huhoo/cue-awesome/ic-memo-cn</a>；许可与来源说明见主仓 LICENSE 与 NOTICE。</p>
+</body>
+</html>

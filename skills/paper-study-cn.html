@@ -1,11 +1,68 @@
-<!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><title>论文研读卡·观点可追句、引文可回源 · Cue Skills</title>
-<meta name="description" content="把一篇论文变成可核对的研读卡：论点-方法-数据-结论逐句挂页锚，复现清单，引用网络，综述骨架与待核清单；不代写、不编引文。"><meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="canonical" href="https://huhoo.github.io/cue-skills-site/skills/paper-study-cn.html"></head><body><main>
-<p><a href="../">← 全部 skill</a></p><h1>论文研读卡·观点可追句、引文可回源</h1>
-<p><code>paper-study-cn</code> · v0.2.27 · MIT · 来源 <a href="https://github.com/huhoo/cue-awesome/tree/main/paper-study-cn">仓库子目录</a></p>
-<p>把一篇论文变成可核对的研读卡：论点-方法-数据-结论逐句挂页锚，复现清单，引用网络，综述骨架与待核清单；不代写、不编引文。</p><h2>安装</h2><pre><code>npx skills add huhoo/cue-awesome --skill paper-study-cn</code></pre>
-<p>或：从 <a href="https://github.com/huhoo/cue-awesome/releases">Releases</a> 下载 <code>paper-study-cn.zip</code> 解到宿主 skills 目录（每枚同名资产在最新一发）。</p>
-<h2>完整说明</h2><p>学术论文研读包：给你一篇 PDF/链接，产出五段研读卡——观点逐句挂页码锚、复现清单（数据/代码/参数缺口如实标）、引用网络只列检索到的、综述脚手架留你自己的论点槽。适合「这篇论文讲什么」「帮我读这篇 PDF」「综述取材」「引用对不对」等场景。Do NOT use for: 代写或降重改写论文、编造不存在的引文与结论、替你做学术评价。Triggers: 论文研读 / 读这篇 PDF / 文献速览 / 综述骨架 / 引用核对 / 复现清单； paper reading / literature review scaffold</p>
-<p>本仓库的 skill 不判断真伪、不做预警；评级与目标价一律留人工。数据腿由 Cue 通道提供，配一把 API key 即可，无需自备数据源或自建数据层。</p>
-</main></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>论文研读卡·观点可追句、引文可回源 · paper-study-cn</title>
+<meta name="description" content="把一篇论文变成可核对的研读卡：论点-方法-数据-结论逐句挂页锚，复现清单，引用网络，综述骨架与待核清单；不代写、不编引文。">
+<link rel="canonical" href="https://huhoo.github.io/cue-skills-site/skills/paper-study-cn.html">
+<style>body{max-width:46rem;margin:2.5rem auto 4rem;padding:0 1.1rem;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif;color:#1c1c1c;background:#fff}h1{font-size:1.5rem;margin:.2rem 0 .1rem}h2{font-size:1.05rem;margin:2rem 0 .5rem;color:#333}.sub{color:#555;margin:0 0 1.4rem}.card{border:1px solid #e3e3e3;border-radius:8px;padding:.9rem 1rem;margin:.7rem 0}pre{background:#f6f6f6;border-radius:6px;padding:.75rem .85rem;overflow-x:auto;font-size:.86rem;line-height:1.5}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}a{color:#0b5cad}.note{color:#555;font-size:.9rem}.cap{color:#666;font-size:.82rem;margin:.3rem 0 0}.grid{display:grid;gap:.55rem}@media(max-width:640px){body{margin-top:1.4rem}}</style>
+</head>
+<body>
+<h1>论文研读卡·观点可追句、引文可回源</h1>
+<p class="sub"><code>paper-study-cn</code> · 场景 skill · 全部列表见 <a href="../">index</a></p>
+<h2>这枚做什么</h2>
+<div class="card">把一篇论文变成可核对的研读卡：论点-方法-数据-结论逐句挂页锚，复现清单，引用网络，综述骨架与待核清单；不代写、不编引文。</div>
+<h2>能力与边界（原文完整描述）</h2>
+<div class="card">学术论文研读包：给你一篇 PDF/链接，产出五段研读卡——观点逐句挂页码锚、复现清单（数据/代码/参数缺口如实标）、引用网络只列检索到的、综述脚手架留你自己的论点槽。适合「这篇论文讲什么」「帮我读这篇 PDF」「综述取材」「引用对不对」等场景。Do NOT use for: 代写或降重改写论文、编造不存在的引文与结论、替你做学术评价。Triggers: 论文研读 / 读这篇 PDF / 文献速览 / 综述骨架 / 引用核对 / 复现清单； paper reading / literature review scaffold</div>
+<h2>安装</h2>
+<pre><code>npx skills add huhoo/cue-awesome --skill paper-study-cn</code></pre>
+<p class="cap">该行取自该枚包内面文（README.md）原句，非本页撰写；版本与变更以该枚 frontmatter 与该枚 CHANGELOG 现值为准。</p>
+<h2>示例输出</h2>
+<pre><code># 论文研读卡
+
+&gt; 用法：把一篇论文填进这张五段卡，然后用 `https://github.com/huhoo/cue-awesome/blob/main/paper-study-cn/scripts/check_study_card.py &lt;本文件&gt;` 过四道机检。
+&gt; **空模板过不了闸是设计，不是缺陷**——它要求每行有页/节锚、取不到的字段明写「缺」、引用只列文内真有的、论点槽不硬填。
+&gt; 纪律来自 `SKILL.md` §1/§3/§4：论文内容只能来自本次读到的文件；引文逐字，不改写、不四舍五入；编造引文＝本件最重事故。
+
+## 头部自标
+
+- 本卡状态：**AI 研读整理，观点请回原文核对，不构成学术评价**。
+- 本次读取所依据的文件：____________（路径或 URL；一篇一卡，多篇请分卡）
+- 论文版本（年／卷／期／版次，文内取）：____　　发表年份：____
+- 通道页集（解析回显共几页，写「共 N 页」；取不到写「未取」，并在同行末申报『页集比对跳过』）：____
+- 通道形制说明：解析返回的是否带页码、带节定位，**以实际返回为准**；不适配的输入本件停用并说明理由，不硬试。
+
+---
+
+## 一、论文卡
+
+&gt; 每行都要能指回原文位置。取不到的字段写「缺」或「文内未见」，锚格填「不适用」——不许凭记忆补，也不许留空。
+
+| 项 | 内容（逐字摘录或忠实短转述） | 页／节锚 |
+|---|---|---|
+| 题目 | | |
+| 作者 | | |
+| 年份 | | |
+| 核心论点 | | |
+| 方法 | | |
+| 数据 | | |
+| 结论 | | |
+
+## 二、复现清单
+
+&gt; 三项都要有交代：有则写内容与锚，无则写「未见／缺」。**本段不判定「能不能复现」**，只列缺口。
+
+| # | 项 | 状态（在场／未见／缺／部分） | 内容与依据（页／节锚，或「不适用」） |
+|---|---|---|---|
+| 1 | 数据集可得性 | | |
+| 2 | 代码链接在场性 | | |
+| 3 | 关键参数完备度 | | |
+
+## 三、引用网络
+</code></pre>
+<p class="cap">逐字节取自该枚包内随包样例件 <code>assets/论文研读卡.md</code>。页面里的包内路径已改写成 GitHub 可跟随链接，词面未改。</p>
+<h2>出处</h2>
+<p class="note">源码与完整说明：<a href="https://github.com/huhoo/cue-awesome/tree/main/paper-study-cn">huhoo/cue-awesome/paper-study-cn</a>；许可与来源说明见主仓 LICENSE 与 NOTICE。</p>
+</body>
+</html>

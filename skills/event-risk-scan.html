@@ -1,11 +1,64 @@
-<!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><title>企业风险扫描·三源可查不打分 · Cue Skills</title>
-<meta name="description" content="对一家公司跑处罚/监管措施/对外担保三源扫描卡：逐条带出处与日期，未达面明写未达；不评整体风险、不算违约概率。"><meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="canonical" href="https://huhoo.github.io/cue-skills-site/skills/event-risk-scan.html"></head><body><main>
-<p><a href="../">← 全部 skill</a></p><h1>企业风险扫描·三源可查不打分</h1>
-<p><code>event-risk-scan</code> · v0.2.23 · MIT · 来源 <a href="https://github.com/huhoo/cue-awesome/tree/main/event-risk-scan">仓库子目录</a></p>
-<p>对一家公司跑处罚/监管措施/对外担保三源扫描卡：逐条带出处与日期，未达面明写未达；不评整体风险、不算违约概率。</p><h2>安装</h2><pre><code>npx skills add huhoo/cue-awesome --skill event-risk-scan</code></pre>
-<p>或：从 <a href="https://github.com/huhoo/cue-awesome/releases">Releases</a> 下载 <code>event-risk-scan.zip</code> 解到宿主 skills 目录（每枚同名资产在最新一发）。</p>
-<h2>完整说明</h2><p>企业风险一键扫描（数据腿实测版）：给你公司名或代码，产出一页扫描卡——行政处罚与监管措施逐条（带决定文书号/日期/机关）、对外担保要点、全球制裁执法面（涉跨境主体时）；每条挂官方出处，检索未达的面**明写未达不补空白**。适合「这家公司有什么处罚」「对外担保扫一遍」「出海实体制裁风险查查」等场景。Do NOT use for: 整体风险评级或违约概率、涉诉与股权链推断（通道当前未达，本件不装）、投资建议。Triggers: 企业风险扫描 / 处罚记录 / 监管措施 / 对外担保 / 制裁筛查； company risk scan / penalty check</p>
-<p>本仓库的 skill 不判断真伪、不做预警；评级与目标价一律留人工。数据腿由 Cue 通道提供，配一把 API key 即可，无需自备数据源或自建数据层。</p>
-</main></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>企业风险扫描·三源可查不打分 · event-risk-scan</title>
+<meta name="description" content="对一家公司跑处罚/监管措施/对外担保三源扫描卡：逐条带出处与日期，未达面明写未达；不评整体风险、不算违约概率。">
+<link rel="canonical" href="https://huhoo.github.io/cue-skills-site/skills/event-risk-scan.html">
+<style>body{max-width:46rem;margin:2.5rem auto 4rem;padding:0 1.1rem;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif;color:#1c1c1c;background:#fff}h1{font-size:1.5rem;margin:.2rem 0 .1rem}h2{font-size:1.05rem;margin:2rem 0 .5rem;color:#333}.sub{color:#555;margin:0 0 1.4rem}.card{border:1px solid #e3e3e3;border-radius:8px;padding:.9rem 1rem;margin:.7rem 0}pre{background:#f6f6f6;border-radius:6px;padding:.75rem .85rem;overflow-x:auto;font-size:.86rem;line-height:1.5}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}a{color:#0b5cad}.note{color:#555;font-size:.9rem}.cap{color:#666;font-size:.82rem;margin:.3rem 0 0}.grid{display:grid;gap:.55rem}@media(max-width:640px){body{margin-top:1.4rem}}</style>
+</head>
+<body>
+<h1>企业风险扫描·三源可查不打分</h1>
+<p class="sub"><code>event-risk-scan</code> · 场景 skill · 全部列表见 <a href="../">index</a></p>
+<h2>这枚做什么</h2>
+<div class="card">对一家公司跑处罚/监管措施/对外担保三源扫描卡：逐条带出处与日期，未达面明写未达；不评整体风险、不算违约概率。</div>
+<h2>能力与边界（原文完整描述）</h2>
+<div class="card">企业风险一键扫描（数据腿实测版）：给你公司名或代码，产出一页扫描卡——行政处罚与监管措施逐条（带决定文书号/日期/机关）、对外担保要点、全球制裁执法面（涉跨境主体时）；每条挂官方出处，检索未达的面**明写未达不补空白**。适合「这家公司有什么处罚」「对外担保扫一遍」「出海实体制裁风险查查」等场景。Do NOT use for: 整体风险评级或违约概率、涉诉与股权链推断（通道当前未达，本件不装）、投资建议。Triggers: 企业风险扫描 / 处罚记录 / 监管措施 / 对外担保 / 制裁筛查； company risk scan / penalty check</div>
+<h2>安装</h2>
+<pre><code>npx skills add huhoo/cue-awesome --skill event-risk-scan</code></pre>
+<p class="cap">该行取自该枚包内面文（README.md）原句，非本页撰写；版本与变更以该枚 frontmatter 与该枚 CHANGELOG 现值为准。</p>
+<h2>示例输出</h2>
+<pre><code># 风险扫描卡
+
+&gt; 用法：一家公司一张卡，填完跑 `python3 https://github.com/huhoo/cue-awesome/blob/main/event-risk-scan/scripts/check_scan_card.py 本文件` 过四道机检。
+&gt; **空模板过不了闸是设计，不是缺陷**——它要求时点三件齐（缺一无效）、每条挂本次返货里的出处与日期、没腿的三面逐面点名「未达」。
+&gt; 纪律来自 `SKILL.md` §2/§3：条目只能来自本次检索返货；未检索到写「窗口内未检索到」；本卡不产出任何综合判断类数字或定性结论。
+
+## 头部自标
+
+- 本卡状态：**AI 整理初稿，每条请回官方原文核对，不构成投资建议**。
+- 时点三件（缺一无效）：数据日 ____　窗口 ____~____　运行时刻 ____
+- 数据面说明：域与工具以 live catalog 现值为准，本卡不复述工具名与工具数；返货里没有的参数名、字段名、枚举值一律写「未检索到」，不凭印象填。
+
+---
+
+## 一、主体行
+
+&gt; 公司名与代码**逐字取自本次返货**；多候选时列出让用户点，本卡不代选。
+
+| 项 | 内容（取自返货内字符串） | 出处／定位 |
+|---|---|---|
+| 公司名 | | |
+| 六位代码 | | |
+| 候选处理 | ☐ 单一命中　☐ 多候选·已列出待用户点　☐ 不适用 | |
+
+## 二、处罚与监管措施表
+
+&gt; 逐条＝文书号或标题／日期／机关／事由句，四样都照逐字抄，官方链接挂在最后一格；日期形以返货为准（实测见过纯日形与带时区补形两种，跨源须各自截日对齐）。
+&gt; 零条不是「没有」：勾下方声明并写窗口起止。
+
+| # | 文书号或标题（逐字） | 日期 | 机关 | 事由句（逐字） | 官方出处 |
+|---|---|---|---|---|---|
+| 1 | | | | | |
+
+窗口零命中声明：☐ 本表在窗口 ____~____ 内未检索到条目　☐ 不适用（上表有条目）
+
+## 三、对外担保要点
+
+&gt; 本面是**代理形态**（不是担保明细本体），卡上须如实标「代理面」；每条带 as_of 快照时点与出处。</code></pre>
+<p class="cap">逐字节取自该枚包内随包样例件 <code>assets/风险扫描卡.md</code>。页面里的包内路径已改写成 GitHub 可跟随链接，词面未改。</p>
+<h2>出处</h2>
+<p class="note">源码与完整说明：<a href="https://github.com/huhoo/cue-awesome/tree/main/event-risk-scan">huhoo/cue-awesome/event-risk-scan</a>；许可与来源说明见主仓 LICENSE 与 NOTICE。</p>
+</body>
+</html>

@@ -1,11 +1,78 @@
-<!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><title>民事二审翻案工程·论断逐条带出处 · Cue Skills</title>
-<meta name="description" content="一审败诉后建二审作战体系：判决逆向、证据逐字比对、请求权阶梯、台账与文书包。不是法律意见，条号递交前核对。"><meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="canonical" href="https://huhoo.github.io/cue-skills-site/skills/civil-appeal-turnaround.html"></head><body><main>
-<p><a href="../">← 全部 skill</a></p><h1>民事二审翻案工程·论断逐条带出处</h1>
-<p><code>civil-appeal-turnaround</code> · v0.3.9 · MIT · 来源 <a href="https://github.com/huhoo/cue-awesome/tree/main/civil-appeal-turnaround">仓库子目录</a></p>
-<p>一审败诉后建二审作战体系：判决逆向、证据逐字比对、请求权阶梯、台账与文书包。不是法律意见，条号递交前核对。</p><h2>安装</h2><pre><code>npx skills add huhoo/cue-awesome --skill civil-appeal-turnaround</code></pre>
-<p>或：从 <a href="https://github.com/huhoo/cue-awesome/releases">Releases</a> 下载 <code>civil-appeal-turnaround.zip</code> 解到宿主 skills 目录（每枚同名资产在最新一发）。</p>
-<h2>完整说明</h2><p>民事一审败诉后的翻案工程：还原法官推理链、定位争点被框错的层；证据逐字比对截断/省略/割裂；请求权铺主攻/备位/兜底阶梯；事实台账三级出处；文书包同日递交与自行诉讼操作。不提供法律意见、不替代律师，条号与费用标准递交前核对。脚本与流程离线自包含。Triggers: 一审败诉上诉 / 二审上诉状 / 判决书拆解 / 为什么败诉 / 上诉期与继续保全 / 自行诉讼； lost at first instance / civil appeal / appeal deadline / self-represented litigant Do NOT use for: legal advice.</p>
-<p>本仓库的 skill 不判断真伪、不做预警；评级与目标价一律留人工。数据腿由 Cue 通道提供，配一把 API key 即可，无需自备数据源或自建数据层。</p>
-</main></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>民事二审翻案工程·论断逐条带出处 · civil-appeal-turnaround</title>
+<meta name="description" content="一审败诉后建二审作战体系：判决逆向、证据逐字比对、请求权阶梯、台账与文书包。不是法律意见，条号递交前核对。">
+<link rel="canonical" href="https://huhoo.github.io/cue-skills-site/skills/civil-appeal-turnaround.html">
+<style>body{max-width:46rem;margin:2.5rem auto 4rem;padding:0 1.1rem;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif;color:#1c1c1c;background:#fff}h1{font-size:1.5rem;margin:.2rem 0 .1rem}h2{font-size:1.05rem;margin:2rem 0 .5rem;color:#333}.sub{color:#555;margin:0 0 1.4rem}.card{border:1px solid #e3e3e3;border-radius:8px;padding:.9rem 1rem;margin:.7rem 0}pre{background:#f6f6f6;border-radius:6px;padding:.75rem .85rem;overflow-x:auto;font-size:.86rem;line-height:1.5}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}a{color:#0b5cad}.note{color:#555;font-size:.9rem}.cap{color:#666;font-size:.82rem;margin:.3rem 0 0}.grid{display:grid;gap:.55rem}@media(max-width:640px){body{margin-top:1.4rem}}</style>
+</head>
+<body>
+<h1>民事二审翻案工程·论断逐条带出处</h1>
+<p class="sub"><code>civil-appeal-turnaround</code> · 场景 skill · 全部列表见 <a href="../">index</a></p>
+<h2>这枚做什么</h2>
+<div class="card">一审败诉后建二审作战体系：判决逆向、证据逐字比对、请求权阶梯、台账与文书包。不是法律意见，条号递交前核对。</div>
+<h2>能力与边界（原文完整描述）</h2>
+<div class="card">民事一审败诉后的翻案工程：还原法官推理链、定位争点被框错的层；证据逐字比对截断/省略/割裂；请求权铺主攻/备位/兜底阶梯；事实台账三级出处；文书包同日递交与自行诉讼操作。不提供法律意见、不替代律师，条号与费用标准递交前核对。脚本与流程离线自包含。Triggers: 一审败诉上诉 / 二审上诉状 / 判决书拆解 / 为什么败诉 / 上诉期与继续保全 / 自行诉讼； lost at first instance / civil appeal / appeal deadline / self-represented litigant Do NOT use for: legal advice.</div>
+<h2>边界句</h2>
+<p class="note">不提供法律意见、不替代律师，条号与费用标准递交前核对</p>
+<h2>安装</h2>
+<pre><code>npx skills add huhoo/cue-awesome --skill civil-appeal-turnaround</code></pre>
+<p class="cap">该行取自该枚包内面文（README.md）原句，非本页撰写；版本与变更以该枚 frontmatter 与该枚 CHANGELOG 现值为准。</p>
+<h2>示例输出</h2>
+<pre><code># 事实台账
+
+&gt; Phase 4 产出。**每条事实必须有来源与等级。** 禁止把 C 级当 A 级使用。
+&gt; 等级：A＝判决已认定｜B＝在案已提交未认定｜C＝待调取或待核实
+
+## 一、事实台账
+
+| # | 事实内容（客观描述，不带评价） | 来源（文件 + 页码/时点） | 等级 | 已用于哪些文书 | 纪律备注 |
+|---|---|---|---|---|---|
+| 1 | | | | | |
+| 2 | | | | | |
+| 3 | | | | | |
+
+## 二、时间轴
+
+| 日期 / 区间 | 事件 | 来源 | 等级 | 备注（约数？区间？双向夹逼？） |
+|---|---|---|---|---|
+| | | | | |
+
+**双向夹逼记录：**
+
+- 上游锚点：　　　　　　　　　（来源：　　　　）
+- 下游锚点：　　　　　　　　　（来源：　　　　）
+- ⇒ 可锁定区间：【　　　　，　　　　】
+
+## 三、定性更正留痕
+
+&gt; 任何定性变更后，必须：全库检索 → 逐处更正 → 此处留痕 → 更新红线清单 → 复查连带论证。
+
+| 日期 | 事项 | 前一版结论（已作废） | 更正后结论 | 依据 | 受影响文件（是否已全部更正） | 连带推翻的论证 |
+|---|---|---|---|---|---|---|
+| | | | | | | |
+
+## 四、红线清单（每案必建）
+
+| # | 类别 | 红线内容 | 自检 |
+|---|---|---|---|
+| 1 | 未核实不得写 | | ☐ |
+| 2 | 不得精确化 | | ☐ |
+| 3 | 不得升级表述（未作否认 ≠ 明确承认） | | ☐ |
+| 4 | 不得预断主体 | | ☐ |
+| 5 | 未保全不得引用 | | ☐ |
+| 6 | 不得引入未知事实 | | ☐ |
+| 7 | 不得混线（投诉/追责另立文件） | | ☐ |
+| 8 | 脱敏 | | ☐ |
+
+## 五、自认识别记录
+
+| 陈述原文 | 情形 | 定性 | 可用写法 |
+|---|---|---|---|</code></pre>
+<p class="cap">逐字节取自该枚包内随包样例件 <code>assets/事实台账.md</code>。词面与包内一致。</p>
+<h2>出处</h2>
+<p class="note">源码与完整说明：<a href="https://github.com/huhoo/cue-awesome/tree/main/civil-appeal-turnaround">huhoo/cue-awesome/civil-appeal-turnaround</a>；许可与来源说明见主仓 LICENSE 与 NOTICE。</p>
+</body>
+</html>

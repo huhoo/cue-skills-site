@@ -1,11 +1,43 @@
-<!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><title>竞品决策简报·逐条带出处 · Cue Skills</title>
-<meta name="description" content="竞对对比简报：先证据表后简报，每格带来源、日期与 fact/inference/opinion 级别；一页内结论先行给建议，缺口如实列明。"><meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="canonical" href="https://huhoo.github.io/cue-skills-site/skills/competitive-brief.html"></head><body><main>
-<p><a href="../">← 全部 skill</a></p><h1>竞品决策简报·逐条带出处</h1>
-<p><code>competitive-brief</code> · v0.3.31 · MIT · 来源 <a href="https://github.com/huhoo/cue-awesome/tree/main/competitive-brief">仓库子目录</a></p>
-<p>竞对对比简报：先证据表后简报，每格带来源、日期与 fact/inference/opinion 级别；一页内结论先行给建议，缺口如实列明。</p><h2>安装</h2><pre><code>npx skills add huhoo/cue-awesome --skill competitive-brief</code></pre>
-<p>或：从 <a href="https://github.com/huhoo/cue-awesome/releases">Releases</a> 下载 <code>competitive-brief.zip</code> 解到宿主 skills 目录（每枚同名资产在最新一发）。</p>
-<h2>完整说明</h2><p>给你主体 + 竞品清单，产出简报：结论先行（一页以内、含可执行建议），对比表每格对应证据表单元格——fact 直接可证 / inference 由多事实推导 / opinion 无可引用来源就标 opinion、置信度宁可空着不填「高」。流程硬规矩：证据表没填的维度不写进简报；结论性主张必须先进表；简报末尾列行数、置信度分布与完全没覆盖的维度。适合：尽调背景、会前准备、策略讨论。不适合：法律合规结论、非公开数据推断。 Do NOT use for: legal conclusions, non-public inference, guesses as sources.</p>
-<p>本仓库的 skill 不判断真伪、不做预警；评级与目标价一律留人工。数据腿由 Cue 通道提供，配一把 API key 即可，无需自备数据源或自建数据层。</p>
-</main></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>竞品决策简报·逐条带出处 · competitive-brief</title>
+<meta name="description" content="竞对对比简报：先证据表后简报，每格带来源、日期与 fact/inference/opinion 级别；一页内结论先行给建议，缺口如实列明。">
+<link rel="canonical" href="https://huhoo.github.io/cue-skills-site/skills/competitive-brief.html">
+<style>body{max-width:46rem;margin:2.5rem auto 4rem;padding:0 1.1rem;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif;color:#1c1c1c;background:#fff}h1{font-size:1.5rem;margin:.2rem 0 .1rem}h2{font-size:1.05rem;margin:2rem 0 .5rem;color:#333}.sub{color:#555;margin:0 0 1.4rem}.card{border:1px solid #e3e3e3;border-radius:8px;padding:.9rem 1rem;margin:.7rem 0}pre{background:#f6f6f6;border-radius:6px;padding:.75rem .85rem;overflow-x:auto;font-size:.86rem;line-height:1.5}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}a{color:#0b5cad}.note{color:#555;font-size:.9rem}.cap{color:#666;font-size:.82rem;margin:.3rem 0 0}.grid{display:grid;gap:.55rem}@media(max-width:640px){body{margin-top:1.4rem}}</style>
+</head>
+<body>
+<h1>竞品决策简报·逐条带出处</h1>
+<p class="sub"><code>competitive-brief</code> · 场景 skill · 全部列表见 <a href="../">index</a></p>
+<h2>这枚做什么</h2>
+<div class="card">竞对对比简报：先证据表后简报，每格带来源、日期与 fact/inference/opinion 级别；一页内结论先行给建议，缺口如实列明。</div>
+<h2>能力与边界（原文完整描述）</h2>
+<div class="card">给你主体 + 竞品清单，产出简报：结论先行（一页以内、含可执行建议），对比表每格对应证据表单元格——fact 直接可证 / inference 由多事实推导 / opinion 无可引用来源就标 opinion、置信度宁可空着不填「高」。流程硬规矩：证据表没填的维度不写进简报；结论性主张必须先进表；简报末尾列行数、置信度分布与完全没覆盖的维度。适合：尽调背景、会前准备、策略讨论。不适合：法律合规结论、非公开数据推断。 Do NOT use for: legal conclusions, non-public inference, guesses as sources.</div>
+<h2>边界句</h2>
+<p class="note">不适合：法律合规结论、非公开数据推断</p>
+<h2>安装</h2>
+<pre><code>npx skills add huhoo/cue-awesome --skill competitive-brief</code></pre>
+<p class="cap">该行取自该枚包内面文（CHANGELOG.md）原句，非本页撰写；版本与变更以该枚 frontmatter 与该枚 CHANGELOG 现值为准。</p>
+<h2>示例输出</h2>
+<pre><code>CATALOG=&quot;https://cuecue.cn/api/mcp-catalog&quot;
+curl -s &quot;$CATALOG&quot; | python3 -c &#x27;import json,sys
+rows=json.load(sys.stdin)[&quot;data&quot;][&quot;domains&quot;]
+[print(r.get(&quot;id&quot;), r.get(&quot;external_status&quot;), (r.get(&quot;routing&quot;) or {}).get(&quot;url&quot;, &quot;-&quot;)) for r in rows]&#x27;
+DOMAIN_ID=&quot;&lt;把这里换成上一行列出的那个域 id&gt;&quot;
+ROUTING_URL=&quot;$(curl -s &quot;$CATALOG&quot; | python3 -c &#x27;import json,sys
+rows=json.load(sys.stdin)[&quot;data&quot;][&quot;domains&quot;]
+hit=[r[&quot;routing&quot;][&quot;url&quot;] for r in rows if r.get(&quot;id&quot;)==sys.argv[1] and r.get(&quot;routing&quot;)]
+print(*hit,sep=&quot;\n&quot;) if hit else sys.exit(&quot;未取到：该 id 不在目录现值里（或它没有 routing 里的 url 字段）——先跑上面那行列出现场的 id 再填&quot;)&#x27; &quot;$DOMAIN_ID&quot;)&quot;
+[ -n &quot;$ROUTING_URL&quot; ] || { echo &quot;取值失败：ROUTING_URL 为空——先跑上面那行列出现场 id，再把 DOMAIN_ID 换成其中之一&quot; &gt;&amp;2; exit 1; }
+curl -s -X POST &quot;$ROUTING_URL&quot; \
+  -H &quot;Authorization: Bearer $CUE_API_KEY&quot; \
+  -H &quot;Accept: application/json, text/event-stream&quot; \
+  -d &#x27;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:1,&quot;method&quot;:&quot;tools/list&quot;}&#x27; \
+  -w &#x27;\nHTTP %{http_code}\n&#x27;</code></pre>
+<p class="cap">逐字节取自该枚包内面文 <code>README.md</code>。词面与包内一致。</p>
+<h2>出处</h2>
+<p class="note">源码与完整说明：<a href="https://github.com/huhoo/cue-awesome/tree/main/competitive-brief">huhoo/cue-awesome/competitive-brief</a>；许可与来源说明见主仓 LICENSE 与 NOTICE。</p>
+</body>
+</html>

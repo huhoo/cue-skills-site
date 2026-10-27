@@ -1,11 +1,33 @@
-<!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><title>Omni 解析转 Word·HTML·PPT · Cue Skills</title>
-<meta name="description" content="把 Omni 解析结果重建为保真 .docx、展示 HTML、汇报 PPT：源页分页、真标题目录、溯源标注还原，按场景制式排版。"><meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="canonical" href="https://huhoo.github.io/cue-skills-site/skills/omni2docx.html"></head><body><main>
-<p><a href="../">← 全部 skill</a></p><h1>Omni 解析转 Word·HTML·PPT</h1>
-<p><code>omni2docx</code> · v0.6.14 · MIT · 来源 <a href="https://github.com/huhoo/cue-awesome/tree/main/omni2docx">仓库子目录</a></p>
-<p>把 Omni 解析结果重建为保真 .docx、展示 HTML、汇报 PPT：源页分页、真标题目录、溯源标注还原，按场景制式排版。</p><h2>安装</h2><pre><code>npx skills add huhoo/cue-awesome --skill omni2docx</code></pre>
-<p>或：从 <a href="https://github.com/huhoo/cue-awesome/releases">Releases</a> 下载 <code>omni2docx.zip</code> 解到宿主 skills 目录（每枚同名资产在最新一发）。</p>
-<h2>完整说明</h2><p>把 Omni 解析结果重建为 Word / HTML / PPT：页锚点分页、真标题+目录、表格脚注溯源、多源证据附录。Do NOT use for: 像素级版面复刻、无 omni-reader 的解析层（--md 直出除外）；Triggers: Omni 转 Word/HTML/PPT / 保真重建 / 多源证据整合 / 扫描件转 Word / 公众号排版 / 汇报 deck; omni to docx / parse to deck。开关与制式：--profile 公文/诉讼/研报制式，--pdf 打印件、--inline 公众号不重排、版式池 kpi/compare/timeline。</p>
-<p>本仓库的 skill 不判断真伪、不做预警；评级与目标价一律留人工。数据腿由 Cue 通道提供，配一把 API key 即可，无需自备数据源或自建数据层。</p>
-</main></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Omni 解析转 Word·HTML·PPT · omni2docx</title>
+<meta name="description" content="把 Omni 解析结果重建为保真 .docx、展示 HTML、汇报 PPT：源页分页、真标题目录、溯源标注还原，按场景制式排版。">
+<link rel="canonical" href="https://huhoo.github.io/cue-skills-site/skills/omni2docx.html">
+<style>body{max-width:46rem;margin:2.5rem auto 4rem;padding:0 1.1rem;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif;color:#1c1c1c;background:#fff}h1{font-size:1.5rem;margin:.2rem 0 .1rem}h2{font-size:1.05rem;margin:2rem 0 .5rem;color:#333}.sub{color:#555;margin:0 0 1.4rem}.card{border:1px solid #e3e3e3;border-radius:8px;padding:.9rem 1rem;margin:.7rem 0}pre{background:#f6f6f6;border-radius:6px;padding:.75rem .85rem;overflow-x:auto;font-size:.86rem;line-height:1.5}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}a{color:#0b5cad}.note{color:#555;font-size:.9rem}.cap{color:#666;font-size:.82rem;margin:.3rem 0 0}.grid{display:grid;gap:.55rem}@media(max-width:640px){body{margin-top:1.4rem}}</style>
+</head>
+<body>
+<h1>Omni 解析转 Word·HTML·PPT</h1>
+<p class="sub"><code>omni2docx</code> · 场景 skill · 全部列表见 <a href="../">index</a></p>
+<h2>这枚做什么</h2>
+<div class="card">把 Omni 解析结果重建为保真 .docx、展示 HTML、汇报 PPT：源页分页、真标题目录、溯源标注还原，按场景制式排版。</div>
+<h2>能力与边界（原文完整描述）</h2>
+<div class="card">把 Omni 解析结果重建为 Word / HTML / PPT：页锚点分页、真标题+目录、表格脚注溯源、多源证据附录。Do NOT use for: 像素级版面复刻、无 omni-reader 的解析层（--md 直出除外）；Triggers: Omni 转 Word/HTML/PPT / 保真重建 / 多源证据整合 / 扫描件转 Word / 公众号排版 / 汇报 deck; omni to docx / parse to deck。开关与制式：--profile 公文/诉讼/研报制式，--pdf 打印件、--inline 公众号不重排、版式池 kpi/compare/timeline。</div>
+<h2>安装</h2>
+<pre><code>npx skills add huhoo/cue-awesome --skill omni2docx</code></pre>
+<p class="cap">该行取自该枚包内面文（README.md）原句，非本页撰写；版本与变更以该枚 frontmatter 与该枚 CHANGELOG 现值为准。</p>
+<h2>示例输出</h2>
+<pre><code>{
+  &quot;markdown&quot;: &quot;&lt;步骤1 parts.content.storage.text&gt;&quot;,
+  &quot;grounding&quot;: &lt;步骤1 parts.grounding.storage.value&gt;,
+  &quot;outline&quot;: &lt;可得时的 {coverage, nodes}；不可得或 coverage=none 时省略该字段&gt;,
+  &quot;source&quot;: &quot;&lt;源文件描述&gt;&quot;,
+  &quot;detail&quot;: &quot;grounded&quot;
+}</code></pre>
+<p class="cap">逐字节取自该枚包内面文 <code>SKILL.md</code>。词面与包内一致。</p>
+<h2>出处</h2>
+<p class="note">源码与完整说明：<a href="https://github.com/huhoo/cue-awesome/tree/main/omni2docx">huhoo/cue-awesome/omni2docx</a>；许可与来源说明见主仓 LICENSE 与 NOTICE。</p>
+</body>
+</html>
