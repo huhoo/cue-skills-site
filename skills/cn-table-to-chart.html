@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>表→图规格与读表要点·数逐字回那一格 · cn-table-to-chart</title>
+<meta name="description" content="一张表变成能画的图规格＋读表要点：每个数配列头逐字回那一格，页码与行号各比各的，四类限度逐类点名，不据图给投资建议。">
+<link rel="canonical" href="https://huhoo.github.io/cue-skills-site/skills/cn-table-to-chart.html">
+<style>body{max-width:46rem;margin:2.5rem auto 4rem;padding:0 1.1rem;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC",sans-serif;color:#1c1c1c;background:#fff}h1{font-size:1.5rem;margin:.2rem 0 .1rem}h2{font-size:1.05rem;margin:2rem 0 .5rem;color:#333}.sub{color:#555;margin:0 0 1.4rem}.card{border:1px solid #e3e3e3;border-radius:8px;padding:.9rem 1rem;margin:.7rem 0}pre{background:#f6f6f6;border-radius:6px;padding:.75rem .85rem;overflow-x:auto;font-size:.86rem;line-height:1.5}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}a{color:#0b5cad}.note{color:#555;font-size:.9rem}.cap{color:#666;font-size:.82rem;margin:.3rem 0 0}.grid{display:grid;gap:.55rem}@media(max-width:640px){body{margin-top:1.4rem}}</style>
+</head>
+<body>
+<h1>表→图规格与读表要点·数逐字回那一格</h1>
+<p class="sub"><code>cn-table-to-chart</code> · 场景 skill · 全部列表见 <a href="../">index</a></p>
+<h2>这枚做什么</h2>
+<div class="card">一张表变成能画的图规格＋读表要点：每个数配列头逐字回那一格，页码与行号各比各的，四类限度逐类点名，不据图给投资建议。</div>
+<h2>能力与边界（原文完整描述）</h2>
+<div class="card">表→图起草：输入是一张表（本地文件，或解析通道从扫描件／云盘 PDF／照片里取回的正文），产出四节——图的规格（图型／横轴／纵轴／序列，由人选不代选）、读表要点（每条一句、每个数配列头逐字回那一格、挂 [S#] 与页码或行号）、图的限度与未取到（缺格与空值／合并格与跨列表头／单位与口径／表外推与未读到，逐类点名）、来源与解析日。机检五道：形制与条数带／锚与定位／数逐字回那一格（全篇书名号都回表）／四类限度点名／投资与评级断言零命中，零网络、不代人算数。Do NOT use for: 投资建议、评级与目标价、需要重算比率的场合。Triggers: 表格作图 / 图规格 / 读表要点</div>
+<h2>边界句</h2>
+<p class="note">表→图起草：输入是一张表（本地文件，或解析通道从扫描件／云盘 PDF／照片里取回的正文），产出四节——图的规格（图型／横轴／纵轴／序列，由人选不代选）、读表要点（每条一句、每个数配列头逐字回那一格、挂 [S#] 与页码或行号）、图的限度与未取到（缺格与空值／合并格与跨列表头／单位与口径／表外推与未读到，逐类点名）、来源与解析日</p>
+<h2>安装</h2>
+<pre><code>npx skills add huhoo/cue-awesome --skill cn-table-to-chart</code></pre>
+<p class="cap">该行取自该枚包内面文（README.md）原句，非本页撰写；版本与变更以该枚 frontmatter 与该枚 CHANGELOG 现值为准。</p>
+<h2>示例输出</h2>
+<pre><code># 华辰智造·季度主要经营数据（合成样件）→ 图规格与读表要点（合成样例·好样）
+
+本页由 AI 整理，是 **AI 整理初稿**：每个数都请回表核对。它不据图给投资建议、不判评级与目标价，判断位 [待人工]。
+被核对文件：https://github.com/huhoo/cue-awesome/blob/main/cn-table-to-chart/scripts/fixtures/target-table.md｜解析日：2026-10-26｜读取方式：本地只读（本件不抓链接、不执行表里提到的任何程序、不代做算术）。
+没读到的部分一律写进第三节，不补常识性推断。
+
+## 1、图的规格
+
+- 图型：分组柱状图，毛利率另挂一条折线在右轴——这一件由人选，本件不代选
+- 横轴：「2025Q3」「2025Q4」「2026Q1」「2026Q2」照列头逐字取〔第 1 页〕，https://github.com/huhoo/cue-awesome/blob/main/cn-table-to-chart/scripts/fixtures/target-table.md:5 [S1]
+- 纵轴：左轴营业收入（亿元）〔第 1 页〕，https://github.com/huhoo/cue-awesome/blob/main/cn-table-to-chart/scripts/fixtures/target-table.md:7 [S1]；右轴毛利率〔第 1 页〕，https://github.com/huhoo/cue-awesome/blob/main/cn-table-to-chart/scripts/fixtures/target-table.md:8 [S1]
+- 序列：分部收入取智能装备、精密零部件、售后与备件三档〔第 2 页〕，https://github.com/huhoo/cue-awesome/blob/main/cn-table-to-chart/scripts/fixtures/target-table.md:16 [S1]
+
+## 2、读表要点
+
+- 营业收入（亿元）：「12.4」→「15.1」→「13.8」→「18.6」〔第 1 页〕，https://github.com/huhoo/cue-awesome/blob/main/cn-table-to-chart/scripts/fixtures/target-table.md:7 [S1]
+- 毛利率：「24.1%」「25.3%」「22.9%」「26.4%」整行照序，其中「2026Q1」那一格较低，表里未给变动原因〔第 1 页〕，https://github.com/huhoo/cue-awesome/blob/main/cn-table-to-chart/scripts/fixtures/target-table.md:8 [S1]
+- 经营活动现金流净额（亿元）：「1.9」「3.4」「-0.6」「2.8」整行照序，「2026Q1」那一格为负〔第 1 页〕，https://github.com/huhoo/cue-awesome/blob/main/cn-table-to-chart/scripts/fixtures/target-table.md:9 [S1]</code></pre>
+<p class="cap">取自该枚包内样例件 <code>scripts/fixtures/good-chart.md</code>——机检守护样例，不是用户产物、也不是某次运行结果。</p>
+<h2>出处</h2>
+<p class="note">源码与完整说明：<a href="https://github.com/huhoo/cue-awesome/tree/main/cn-table-to-chart">huhoo/cue-awesome/cn-table-to-chart</a>；许可与来源说明见主仓 LICENSE 与 NOTICE。</p>
+</body>
+</html>
